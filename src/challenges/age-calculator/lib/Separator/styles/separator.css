@@ -1,0 +1,8 @@
+.after-line::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: var(--age-light-grey);
+	z-index: 1;
+}

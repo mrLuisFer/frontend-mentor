@@ -1,64 +1,64 @@
-import { AllRoutes } from '../lib/enums/AllRoutes';
-import { Levels } from '../lib/enums/Levels';
-import { Challenge } from '../lib/types/Challenge';
+import type { Challenge } from "@/types/Challenge";
+import { AllRoutes } from "../enums/AllRoutes";
+import { Levels } from "../enums/Levels";
 
 export const tags = {
-	html: 'HTML',
-	css: 'CSS',
-	js: 'JS',
-	api: 'API',
+	html: "HTML",
+	css: "CSS",
+	js: "JS",
+	api: "API",
 };
 
 export const challengesInitialState: Challenge[] = [
 	{
-		title: 'Age Calculator',
+		title: "Age Calculator",
 		description:
-			'This challenge is designed to sharpen your JavaScript and form validation skills. Working with dates in JavaScript can be tricky, so this will be a nice test!',
+			"This challenge is designed to sharpen your JavaScript and form validation skills. Working with dates in JavaScript can be tricky, so this will be a nice test!",
 		tags: [tags.html, tags.css, tags.js],
 		level: Levels.junior,
 		image:
-			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/jmzygkuazktqtg2akkkx.jpg',
+			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/jmzygkuazktqtg2akkkx.jpg",
 		route: AllRoutes.ageCalculator,
 	},
 	{
-		title: 'Interactive Comments Section',
+		title: "Interactive Comments Section",
 		description:
 			"This is project will put your JavaScript skills to the test. We provide a JSON file to pull the data, but it's also a perfect project to build as a full-stack CRUD app!",
 		tags: [tags.html, tags.css, tags.js],
 		level: Levels.intermediate,
 		image:
-			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/v9wskl4mnbt5gbxm4o2r.jpg',
+			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/v9wskl4mnbt5gbxm4o2r.jpg",
 		route: AllRoutes.interactiveComments,
 	},
 	{
-		title: 'QR code component',
+		title: "QR code component",
 		description:
-			'A perfect first challenge if you are new to HTML and CSS. The card layout does not shift, so it is ideal if you have not learned about building responsive layouts yet.',
+			"A perfect first challenge if you are new to HTML and CSS. The card layout does not shift, so it is ideal if you have not learned about building responsive layouts yet.",
 		tags: [tags.html, tags.css],
 		level: Levels.newbie,
 		route: AllRoutes.qrCard,
 		image:
-			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/cybxdhr4wewlscvco9dd.jpg',
+			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/cybxdhr4wewlscvco9dd.jpg",
 	},
 	{
-		title: 'Ip Address Tracker',
+		title: "Ip Address Tracker",
 		description:
-			'In this challenge, you will be using two separate APIs together to create an IP Address Tracking app.',
+			"In this challenge, you will be using two separate APIs together to create an IP Address Tracking app.",
 		tags: [tags.html, tags.css, tags.js, tags.api],
 		level: Levels.intermediate,
 		route: AllRoutes.ipAddress,
 		image:
-			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/ld4kxbjoxpqpjenak8w6.jpg',
+			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/ld4kxbjoxpqpjenak8w6.jpg",
 	},
 	{
-		title: 'REST Countries API with color theme switcher',
+		title: "REST Countries API with color theme switcher",
 		description:
-			'If you are wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.',
+			"If you are wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
 		tags: [tags.html, tags.css, tags.js, tags.api],
 		level: Levels.intermediate,
 		route: AllRoutes.restCountries,
 		image:
-			'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/wirxeocmd6tpnn9c5oqc.jpg',
+			"https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/wirxeocmd6tpnn9c5oqc.jpg",
 	},
 ];
 

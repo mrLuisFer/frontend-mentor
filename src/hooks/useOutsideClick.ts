@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 /**
  * A custom hook that invokes a callback when a click occurs outside a specified element.
@@ -20,11 +20,11 @@ export function useOutsideClick<T extends HTMLElement>(callback: () => void | un
 		};
 
 		// Attach the click event listener to the document during component mount.
-		document.addEventListener('click', handleClick, true);
+		document.addEventListener("click", handleClick, true);
 
 		// Detach the click event listener during component unmount to prevent memory leaks.
 		return () => {
-			document.removeEventListener('click', handleClick, true);
+			document.removeEventListener("click", handleClick, true);
 		};
 	}, [ref, callback]); // Re-run the effect if the ref or callback function changes.
 

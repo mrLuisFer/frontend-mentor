@@ -1,0 +1,33 @@
+---
+import HtmlHeader from "@/components/HtmlHeader.astro";
+import "@/styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<HtmlHeader title={title} description={description} />
+	<body class="polka-background">
+		<main>
+			<slot />
+			<!-- your content is injected here -->
+		</main>
+		<Analytics />
+		<script is:inline>
+			if (typeof window !== "undefined") {
+				const value = localStorage.getItem("key");
+			}
+		</script>
+		<script
+			src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin=""
+			is:inline></script>
+	</body>
+</html>

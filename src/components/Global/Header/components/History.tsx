@@ -5,8 +5,8 @@ import {
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb.tsx';
-import { AllRoutes } from '@/lib/enums/AllRoutes.ts';
+} from "@/components/ui/breadcrumb";
+import { AllRoutes } from "@/enums/AllRoutes";
 
 type HeaderHistoryProps = {
 	currentLocation: string;

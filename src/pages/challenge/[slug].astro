@@ -1,0 +1,25 @@
+---
+import { challengesInitialState } from '@/constants/challenges';
+import { clearChallengeRoute } from '@/utils/clearChallengeRoute';
+import ChallengeRender from '../../components/ChallengeRender';
+import ChallengeLayout from '@/layouts/ChallengeLayout.astro';
+
+export function getStaticPaths() {
+	const challengesNames = challengesInitialState.map((challenge) => {
+		const routeParam = clearChallengeRoute(challenge?.route || '');
+		return {
+			params: {
+				slug: routeParam,
+			},
+		};
+	});
+
+	return challengesNames.filter((challenge) => challenge.params.slug !== '');
+}
+
+const { slug } = Astro.params;
+---
+
+<ChallengeLayout title={`JSChallenge | ${slug}`}>
+	<ChallengeRender client:only challengeName={slug} />
+</ChallengeLayout>

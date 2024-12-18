@@ -1,22 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { AllRoutes } from '@/lib/enums/AllRoutes.ts';
-import { Button } from '@/components/ui/button.tsx';
-import { GoHome } from 'react-icons/go';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Button } from "@/components/ui/button";
+import { GoHome } from "react-icons/go";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function BackToDashboardBtn() {
-	const navigate = useNavigate();
-
 	return (
 		<TooltipProvider>
 			<Tooltip>
 				<TooltipTrigger>
-					<Button
-						className="flex items-center transition p-3 rounded-lg transform active:scale-95 capitalize filter hover:brightness-95 text-sm active:bg-orange-400 active:dark:bg-orange-200 dark:bg-slate-200"
-						onClick={() => {
-							navigate(AllRoutes.root);
-						}}
-					>
+					<Button className="flex transform items-center rounded-lg p-3 text-sm capitalize filter transition hover:brightness-95 active:scale-95 active:bg-orange-400 dark:bg-slate-200 active:dark:bg-orange-200">
 						<GoHome />
 					</Button>
 				</TooltipTrigger>

@@ -1,12 +1,12 @@
-import { useLocation } from 'react-router-dom';
-import BackToDashboardBtn from '../BackToDashboardBtn.tsx';
-import HeaderHistory from '@/components/Global/Header/components/History.tsx';
-import { useMemo } from 'react';
-import HeaderDarkModeButton from '@/components/DarkModeButton/index.tsx';
+import BackToDashboardBtn from "../BackToDashboardBtn";
+import HeaderHistory from "@/components/global/header/components/History";
+import { useMemo } from "react";
+import DarkModeButton from "@/components/dark-mode-button";
+import { useWindowLocation } from "@/hooks/useWindowLocation";
 
 export default function Header() {
-	const location = useLocation();
-	const title = useMemo(() => location.pathname.replace('/', '').split('-').join(' '), []);
+	const { location } = useWindowLocation();
+	const title = useMemo(() => location.replace("/", "").split("-").join(" "), []);
 
 	return (
 		<header className="flex py-2 px-2 sm:px-8 justify-between items-center">
@@ -21,7 +21,7 @@ export default function Header() {
 						{title}
 					</h1>
 				</div>
-				<HeaderDarkModeButton />
+				<DarkModeButton />
 			</div>
 		</header>
 	);

@@ -1,0 +1,50 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+import SearchBar from "@/components/search-bar/SearchBar";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Filter from "@/components/filter-tags";
+import ChallengesRender from "src/components/challenges-list";
+import Footer from "@/components/footer";
+import DarkModeButtonV2 from "@/components/dark-mode-button-v2";
+import PageTitle from "@/components/PageTitle";
+import GitHubStarButton from "@/components/github-stars-button";
+import Blob from "@/components/ui/blob";
+---
+
+<BaseLayout title="JSChallenges Hub">
+	<div class="relative min-h-screen flex flex-col gap-14">
+		<Blob className="top-0 left-0 fill-yellow-100 dark:fill-neutral-700 dark:opacity-[0.1]" />
+		<div class="max-w-5xl md:w-[64rem] mx-auto">
+			<header class="py-[2rem] flex gap-8 justify-between items-start">
+				<section class="flex flex-col gap-4">
+					<h1 class="text-4xl font-black">
+						<PageTitle />
+					</h1>
+					<p
+						class="text-base text-neutral-700 dark:text-neutral-400 max-w-lg md:max-w-xl lg:max-w-2xl dark:hover:text-white hover:text-neutral-900 flex flex-col w-fit transition gap-2"
+					>
+						<span>
+							<PageTitle /> is a site made for JavaScript and Frontend Development challenges.
+						</span>
+						<span>
+							Discover a curated collection of challenges from popular sites like Frontend Mentor,
+							CodeChallenges, and more.
+						</span>
+					</p>
+				</section>
+				<section class="flex items-center gap-6">
+					<GitHubStarButton client:only />
+					<DarkModeButtonV2 client:only />
+				</section>
+			</header>
+			<div class="flex items-end justify-between pt-4 gap-12">
+				<SearchBar client:only />
+				<Filter client:only />
+			</div>
+			<ChallengesRender client:only />
+		</div>
+		<Footer client:only />
+	</div>
+</BaseLayout>
+
+<style></style>

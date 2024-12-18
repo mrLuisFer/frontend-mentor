@@ -3,14 +3,12 @@
 		"useDefineForClassFields": true,
 		"module": "ESNext",
 		"skipLibCheck": true,
-		/* Bundler mode */
 		"moduleResolution": "Node",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
-		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -23,10 +21,24 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
-		}
+			"@/*": ["./src/*"],
+			"@components/*": ["./src/components/*"],
+			"@layouts/*": ["./src/layouts/*"]
+		},
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"verbatimModuleSyntax": true,
+		"jsxImportSource": "react"
 	},
-	"include": ["src"],
-	"references": [{ "path": "./tsconfig.node.json" }],
-	"exclude": ["node_modules"]
+	"include": ["src", ".astro/types.d.ts", "**/*"],
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	],
+	"exclude": ["node_modules", "dist"],
+	"extends": "astro/tsconfigs/base"
 }

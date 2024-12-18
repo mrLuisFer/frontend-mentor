@@ -2,11 +2,11 @@ type LogValue = string | number | object | unknown;
 
 class Logger {
 	private formatKey(value: LogValue): string {
-		if (value && typeof value === 'object') {
+		if (value && typeof value === "object") {
 			return `${value.constructor.name}:`;
 		}
 
-		if (typeof value === 'function') {
+		if (typeof value === "function") {
 			return `${value.name}:`;
 		}
 

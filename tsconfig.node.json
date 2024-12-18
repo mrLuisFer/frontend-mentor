@@ -1,10 +1,40 @@
 {
 	"compilerOptions": {
-		"composite": true,
-		"skipLibCheck": true,
+		"useDefineForClassFields": true,
 		"module": "ESNext",
+		"skipLibCheck": true,
 		"moduleResolution": "Node",
-		"allowSyntheticDefaultImports": true
+		"allowImportingTsExtensions": false,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"verbatimModuleSyntax": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"target": "ESNext",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": false,
+		"esModuleInterop": false,
+		"allowSyntheticDefaultImports": true,
+		"composite": true,
+		"noEmit": false,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@components/*": ["./src/components/*"],
+			"@layouts/*": ["./src/layouts/*"]
+		},
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"jsxImportSource": "react"
 	},
-	"include": ["vite.config.ts"]
+	"include": ["src", ".astro/types.d.ts", "**/*"],
+	"exclude": ["node_modules", "dist"],
+	"extends": "astro/tsconfigs/base"
 }
